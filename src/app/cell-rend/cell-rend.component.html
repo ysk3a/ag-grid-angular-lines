@@ -1,0 +1,28 @@
+<!-- <span style="border-left: 1px solid red; display:block; height: 100%; padding: calc("> </span> -->
+<!-- [ngStyle]="{'width': someAngularVariable +'px', 'left': 'calc(100% - ' +someAngularVariable + 'px)' }" -->
+<!-- <span style="border-left: 1px solid red; display:block; height: 100%;" [ngStyle]="{ 'padding-left': 'calc(' + node.level + ' * 6)px' }"></span> -->
+<div style=" min-height:25px; padding-left: 6px;  display: grid;grid-template-rows: 1fr;" [ngStyle]="{ 'grid-template-columns': 'repeat(' + node.level + ', 30px) 1fr' }">
+  <span style="border-left: 1px solid lightgray; display:block; height: 100%;     width: 100%; " *ngFor="let i of nodeDepth; let last = last">
+    <div
+      *ngIf="last"
+      class="horizontal-line"
+      style="border-bottom: 1px solid lightgray;
+  height: 50%; 
+    width: 100%;"
+    ></div>
+  </span>
+  <span style="display: flex; height: 100%">
+    <!-- border-left: 1px solid red;  -->
+    <!-- <div
+      class="horizontal-line"
+      style="border-bottom: 1px solid blue; flex: 1;
+  height: 50%;"
+    ></div> -->
+    <div>{{ params.value }} {{ node.level }}</div>
+  </span>
+</div>
+<!-- calc(6 * node.level) + calc(6 * node.level) * node.level);
+{'padding-left': 'calc(6 * ' + node.level + ' * 5)px' }
+
+calc(var(--ag-cell-horizontal-padding) + var(--ag-row-group-indent-size) * 2); -->
+<!-- 'padding-left': 'calc(' + node.level + ' * 6)px' } -->
